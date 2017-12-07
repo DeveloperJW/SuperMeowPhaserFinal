@@ -15,7 +15,7 @@ ZPlat.PreloadState = {
     this.load.image('goal', 'assets/images/goal.png');
     this.load.image('slime', 'assets/images/slime.png');
     //load background?
-    //this.load.image('background','');
+    this.load.image('background','assets/images/background.png');
     this.load.spritesheet('player', 'assets/images/player_spritesheet.png', 28, 30, 5, 1, 1); 
     this.load.spritesheet('fly', 'assets/images/fly_spritesheet.png', 35, 18, 2, 1, 2);    
     this.load.image('arrowButton', 'assets/images/arrowButton.png');  
@@ -38,6 +38,7 @@ ZPlat.PreloadState = {
     
   },
   create: function() {
-    this.state.start('Game');
+    //this.state.start('Game');
+      this.state.start('Home');
   }
 };
