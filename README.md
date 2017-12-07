@@ -1,17 +1,17 @@
 # SuperMeowPhaserFinal
-Project purpose: COMP 422 Software Development for Mobile Devices
-Game type: 2d platformer game
-Team Number: Team C (super meow)
+<p>Project purpose: COMP 422 Software Development for Mobile Devices<br>
+Game type: 2d platformer game<br>
+Team Number: Team C (super meow)<br></p>
 
-Tools used for this project:
-  Apache Cordova
-  Phaser game engine
-  Node.js
+Tools used for this project:<br>
+  Apache Cordova<br>
+  Phaser game engine<br>
+  Node.js<br>
   
 
 
-Game Levels:
-  1.Level 1: GrassLand
-  2.Level 2: DesertLand
-  3.Level 3: Ghost Town
+Game Levels:<br>
+  1.Level 1: GrassLand<br>
+  2.Level 2: DesertLand<br>
+  3.Level 3: Ghost Town<br>
 
