@@ -35,6 +35,7 @@ Meow.GameState = {
     var style={font:'30px Arial', fill:'#fff'};
     this.coinsCountLabel=this.add.text(10, 20, 'Coins: '+this.myCoins,style);
     this.coinsCountLabel.fixedToCamera=true;
+      
   },   //end of create
   update: function() {    
     //collision between the player, enemies and the collision layer
@@ -66,7 +67,7 @@ Meow.GameState = {
     }
     else {
       this.player.animations.stop();
-      this.player.frame = 3;
+      this.player.frame = 1;
     }
 
     if((this.cursors.up.isDown || this.player.customParams.mustJump) && (this.player.body.blocked.down || this.player.body.touching.down)) {
@@ -131,13 +132,6 @@ Meow.GameState = {
     //create coins ----------------------------
     this.coins=this.add.group();
     this.createCoins();
-    //var coinArr=this.findObjectsByType('coin',this.map, 'objectLayer');
-    //add coin function here
-    //this.coin=this.add.sprite(coinArr[0].x,coinArr[0].y,'gold');
-    //this.coin.anchor.setTo(0.5);
-    //this.game.physics.arcade.enable(this.coin);
-    //this.coin.body.allowGravity=false;
-      
   },
   createOnscreenControls: function(){
     this.leftArrow = this.add.button(20, this.game.height - 80, 'arrowButton_left');
@@ -252,46 +246,25 @@ Meow.GameState = {
   gameOver: function(){
     this.player.kill();
     this.updateHighscore();
-      //game over overlay
-    this.overlay = this.add.bitmapData(this.game.width, this.game.height);
-    this.overlay.ctx.fillStyle = '#000';
-    this.overlay.ctx.fillRect(0, 0, this.game.width, this.game.height);
-    
-    //sprite for the overlay
-    this.panel = this.add.sprite(0, this.game.height, this.overlay);
-    //added panel to fixed Camera------
-    //this.panel.fixedToCamera='true';
-    this.panel.alpha = 0.55;
-    
-    //overlay raising tween animation
-    var gameOverPanel = this.add.tween(this.panel);
-    gameOverPanel.to({y: 0}, 500);
-    
-    //stop all movement after the overlay reaches the top
-    gameOverPanel.onComplete.add(function(){
+    //game over messages
+    var style={font:'30px Arial', fill:'#fff'};
+    this.gameOverLabel=this.add.text(this.game.width/2, this.game.height/2-30, 'GAME OVER', style);
+    this.gameOverLabel.fixedToCamera=true;
       
-      var style = {font: '30px Arial', fill: '#fff'};
-      this.add.text(this.game.width/2, this.game.height/2, 'GAME OVER', style).anchor.setTo(0.5);
+    style = {font: '20px Arial', fill: '#fff'};
+    this.highScoreLabel=this.add.text(this.game.width/2, this.game.height/2 + 20, 'High score: ' + this.highScore, style);
+    this.highScoreLabel.fixedToCamera=true;
       
-      style = {font: '20px Arial', fill: '#fff'};
-      this.add.text(this.game.width/2, this.game.height/2 + 50, 'High score: ' + this.highScore, style).anchor.setTo(0.5);
+    this.scoreMsg=this.add.text(this.game.width/2, this.game.height/2 + 50, 'Your score: ' + this.myCoins, style);
+    this.scoreMsg.fixedToCamera=true;
       
-      this.add.text(this.game.width/2, this.game.height/2 + 80, 'Your score: ' + this.myCoins, style).anchor.setTo(0.5);
-      
-      style = {font: '10px Arial', fill: '#fff'};
-      this.add.text(this.game.width/2, this.game.height/2 + 120, 'Tap to play again', style).anchor.setTo(0.5);
-      
+     this.tap=this.add.text(this.game.width/2, this.game.height/2 + 90, 'Tap to play again', style);
+        this.tap.fixedToCamera=true;
       this.game.input.onDown.addOnce(this.restart, this);
-      
-      
-    }, this);
-    
-    gameOverPanel.start();
-    
   },
     restart: function(){
-    //this.game.state.start('Game', true, false, this.currentLevel);
-        this.game.state.start('Game', true, false, 'level1');
+    this.game.state.start('Game', true, false, this.currentLevel);
+    //this.game.state.start('Game', true, false, 'level1');
   },
     //highest score into LocalStorage
     updateHighscore: function(){

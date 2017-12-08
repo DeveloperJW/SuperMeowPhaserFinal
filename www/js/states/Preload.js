@@ -14,7 +14,7 @@ Meow.PreloadState = {
     this.load.image('platform', 'assets/images/platform.png');
     this.load.image('goal', 'assets/images/goal.png');
     //this.load.image('slime', 'assets/images/slime.png');
-    this.load.image('slime','assets/images/mouse.png');
+    this.load.image('slime','assets/images/mouse1.png');
     //load game coins
     this.load.image('gold','assets/images/coinGold.png');
     //load background?
