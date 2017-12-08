@@ -171,11 +171,14 @@ body {
 
 
   function goback(form) {
-      window.open('index.html')
+      window.open('play.html')
   }
   function check(form) {
-      if(form.emailadd.value === "myemail" && form.psw.value === "mypsw"){
-          window.open('welcome.html')
+      if(form.emailadd.value === "email@gmail.com" && form.psw.value === "mypsw"){
+          window.open('play.html');
+
+
+
       }
       else {
           alert('Error Password or Email entered')

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    font-family: Comic Sans MS;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+body {
+  background: url('assets/images/background_large.png') no-repeat;
+  background-size: 100%;
+}
+
+/* Set a style for all buttons */
+ {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+     
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+    font-family: Comic Sans MS;
+  font-size: larger;
+  font-weight: bold;
+}
+.signupbtn {
+  padding: 14px 20px;
+  background-color: green;
+  font-family: Comic Sans MS;
+  font-size:larger;
+  font-weight:bold;
+}
+.loginbtn {
+  padding: 14px 20px;
+  background-color: yellowgreen;
+  font-family: Comic Sans MS;
+  font-size:larger;
+  font-weight:bold;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn,.loginbtn {
+    float: left;
+    width: 33%;
+    font-family: Comic Sans MS
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+  font-family: Comic Sans MS;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+
+<h2>Join Super Meow</h2>
+
+<form name="login"">
+
+    <label><b>Email</b></label><br>
+    <input type="text" placeholder="Enter Email" id = "emailadd" name="emailadd" required><br>
+
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+
+
+    <input type="checkbox" checked="checked"> Remember me
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <input type="reset" class="cancelbtn" value="Go Play" onclick="goback(this.form)"/>
+      <input type="button" id="signUp" class="signupbtn"  value="Sign Up"/>
+      <input type="button" id="login" class="loginbtn" onclick="check(this.form)" value="Login">
+    </div>
+</form>
+
+<script>
+  // check if browser support indexedDB
+  var indexedDBsupport = false;
+  if("indexedDB" in window) {
+      indexedDBsupport = true;
+      console.log("IndexedDB supported...");
+  } else {
+      console.log("No support for IndexedDB...");
+  }
+  // Open the database for project, add events listeners
+  if(indexedDBsupport) {
+      var openDB = indexedDB.open("superMeow", 5);
+      openDB.onupgradeneeded = function(e) {
+          console.log("DB upgrade...");
+          //local var for db upgrade, create first objectStore
+          var upgradeDB = e.target.result;
+          if (!upgradeDB.objectStoreNames.contains("superMeowos")) {
+              upgradeDB.createObjectStore("superMeowos",{ autoIncrement:true });
+              console.log("new object store created...")
+          }
+      }
+      openDB.onsuccess = function(e) {
+          console.log("DB success ...");
+          db = e.target.result;
+          //event handler for button
+          $("#signUp").on("click", function(e){
+              e.preventDefault();
+              var emailadd = $("#emailadd").val();
+              var psw = $("#psw").val();
+              signUp(emailadd, psw);
+          })
+
+          //signUp function
+              function signUp(email, psw) {
+              //define user account info
+              var userInfo = {
+                  Email:email,
+                  password:psw
+              };
+              // use transaction to bridge between app and database
+              var dbTransaction = db.transaction(["superMeowos"], "readwrite");
+              // use transaction to retrieve object store for data
+              var dataStore = dbTransaction.objectStore("superMeowos");
+              var addRequest = dataStore.add(userInfo);
+
+              addRequest.onsuccess = function(e) {
+                  console.log("data stored ...");
+                  // do something
+              }
+              addRequest.onerror = function(e) {
+                  console.log(e.target.error.name);
+                  //handle error
+                  alert("Database error: " + event.target.errorCode);
+              }
+
+          }
+
+      }
+      openDB.onerror = function(e) {
+          console.log("DB error...");
+          console.dir(e);
+      }
+
+  }
+  // test support event
+
+
+  function goback(form) {
+      window.open('index.html')
+  }
+  function check(form) {
+      if(form.emailadd.value === "myemail" && form.psw.value === "mypsw"){
+          window.open('welcome.html')
+      }
+      else {
+          alert('Error Password or Email entered')
+      }
+  }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
