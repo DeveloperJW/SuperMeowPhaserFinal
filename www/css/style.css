@@ -236,3 +236,13 @@ span.psw {
   font-size: larger;
   font-weight: bold;
 }
+
+
+input[type="text"] {
+    width:200px;
+    height:30px;
+}
+input[type="password"] {
+    width:200px;
+    height:30px;
+}
