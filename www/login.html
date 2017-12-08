@@ -18,7 +18,7 @@
     }
     #formlogin {
         position: relative;
-        
+
 
     }
 
@@ -101,7 +101,7 @@
 
 
 <div class="clearfix">
-    <input type="reset" class="cancelbtn" value="Go Play" onclick="goback(this.form)"/>
+    <input type="reset" class="cancelbtn" value="Go Back" onclick="goback(this.form)"/>
     <input type="button" id="login" class="loginbtn" onclick="check(this.form)" value="Login">
 </div>
 </form>
@@ -109,7 +109,7 @@
 <script>
 
     function goback(form) {
-        window.open('play.html')
+        window.open('index.html');
     }
     function check(form) {
         if(form.emailadd.value === "email@gmail.com" && form.psw.value === "mypsw"){
