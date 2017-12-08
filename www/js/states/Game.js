@@ -18,6 +18,7 @@ Meow.GameState = {
     this.cursors = this.game.input.keyboard.createCursorKeys();
       
     //coins
+      //TODO: store current coins
       this.myCoins=0;
       
   },//end of init
@@ -28,9 +29,11 @@ Meow.GameState = {
     this.createOnscreenControls();
     //coin sound
     this.coinSound = this.add.audio('coin_sound');
+    //hit enemy sound
+    this.hitSound=this.add.audio('kick');
     //show number of coins
     var style={font:'30px Arial', fill:'#fff'};
-    this.coinsCountLabel=this.add.text(10, 20, 'Coins: 0',style);
+    this.coinsCountLabel=this.add.text(10, 20, 'Coins: '+this.myCoins,style);
     this.coinsCountLabel.fixedToCamera=true;
   },   //end of create
   update: function() {    
@@ -82,6 +85,9 @@ Meow.GameState = {
     
     //join the tile images to the json data
     this.map.addTilesetImage('tiles_spritesheet', 'gameTiles');
+    this.map.addTilesetImage('420_background','420_background');
+    this.map.addTilesetImage('420_iceland','420_iceland');
+    this.map.addTilesetImage('420_ghost','420_ghost');
     
     //create tile layers
     this.backgroundLayer = this.map.createLayer('backgroundLayer');
@@ -202,6 +208,9 @@ Meow.GameState = {
   },
   changeLevel: function(player, goal){
     this.game.state.start('Game', true, false, goal.nextLevel);
+      //TODO: need to store current coin number
+      
+      
   },
   createEnemies: function(){
     var enemyArr = this.findObjectsByType('enemy', this.map, 'objectsLayer');
@@ -225,8 +234,10 @@ Meow.GameState = {
     if(enemy.body.touching.up){
       enemy.kill();
       player.body.velocity.y = -this.BOUNCING_SPEED;
+    this.hitSound.play();
     }
     else {
+        this.player.kill();
       this.gameOver();
     }
   },
@@ -239,7 +250,61 @@ Meow.GameState = {
         }
     },
   gameOver: function(){
-    this.game.state.start('Game', true, false, this.currentLevel);
+    this.player.kill();
+    this.updateHighscore();
+      //game over overlay
+    this.overlay = this.add.bitmapData(this.game.width, this.game.height);
+    this.overlay.ctx.fillStyle = '#000';
+    this.overlay.ctx.fillRect(0, 0, this.game.width, this.game.height);
+    
+    //sprite for the overlay
+    this.panel = this.add.sprite(0, this.game.height, this.overlay);
+    //added panel to fixed Camera------
+    //this.panel.fixedToCamera='true';
+    this.panel.alpha = 0.55;
+    
+    //overlay raising tween animation
+    var gameOverPanel = this.add.tween(this.panel);
+    gameOverPanel.to({y: 0}, 500);
+    
+    //stop all movement after the overlay reaches the top
+    gameOverPanel.onComplete.add(function(){
+      
+      var style = {font: '30px Arial', fill: '#fff'};
+      this.add.text(this.game.width/2, this.game.height/2, 'GAME OVER', style).anchor.setTo(0.5);
+      
+      style = {font: '20px Arial', fill: '#fff'};
+      this.add.text(this.game.width/2, this.game.height/2 + 50, 'High score: ' + this.highScore, style).anchor.setTo(0.5);
+      
+      this.add.text(this.game.width/2, this.game.height/2 + 80, 'Your score: ' + this.myCoins, style).anchor.setTo(0.5);
+      
+      style = {font: '10px Arial', fill: '#fff'};
+      this.add.text(this.game.width/2, this.game.height/2 + 120, 'Tap to play again', style).anchor.setTo(0.5);
+      
+      this.game.input.onDown.addOnce(this.restart, this);
+      
+      
+    }, this);
+    
+    gameOverPanel.start();
+    
+  },
+    restart: function(){
+    //this.game.state.start('Game', true, false, this.currentLevel);
+        this.game.state.start('Game', true, false, 'level1');
+  },
+    //highest score into LocalStorage
+    updateHighscore: function(){
+    this.highScore = +localStorage.getItem('highScore');
+    
+    //do we have a new high score
+    if(this.highScore < this.myCoins){
+      this.highScore = this.myCoins;
+      
+      //save new high score
+      localStorage.setItem('highScore', this.highScore);
+    }
   }
+    
   
 };//name of GameState
