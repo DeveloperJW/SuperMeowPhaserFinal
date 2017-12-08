@@ -12,8 +12,13 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+body {
+  background: url('assets/images/background_large.png') no-repeat;
+  background-size: 100%;
+}
+
 /* Set a style for all buttons */
-button {
+ {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -27,12 +32,30 @@ button {
 .cancelbtn {
     padding: 14px 20px;
     background-color: #f44336;
+    font-family: Comic Sans MS;
+  font-size: larger;
+  font-weight: bold;
+}
+.signupbtn {
+  padding: 14px 20px;
+  background-color: green;
+  font-family: Comic Sans MS;
+  font-size:larger;
+  font-weight:bold;
+}
+.loginbtn {
+  padding: 14px 20px;
+  background-color: yellowgreen;
+  font-family: Comic Sans MS;
+  font-size:larger;
+  font-weight:bold;
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {
+.cancelbtn,.signupbtn,.loginbtn {
     float: left;
-    width: 50%;
+    width: 33%;
+    font-family: Comic Sans MS
 }
 
 /* Add padding to container elements */
@@ -57,27 +80,48 @@ button {
 </style>
 <body>
 
-<h2>Signup to join the world of Super Meow</h2>
+<h2>Join Super Meow</h2>
 
-<form action="/action_page.php" style="border:1px solid #ccc">
-  <div class="container">
-    <label><b>Email</b></label>
-    <input placeholder="Enter Email" name="email" required>
+<form name="login"">
+
+    <label><b>Email</b></label><br>
+    <input type="text" placeholder="Enter Email" name="emailadd" required><br>
+
 
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <label><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
     <input type="checkbox" checked="checked"> Remember me
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <input type="reset" class="cancelbtn" value="Go Play" onclick="goback(this.form)"/>
+      <input type="button" class="signupbtn" onclick="check(this.form)" value="Sign Up"/>
+      <input type="button" class="loginbtn" onclick="check(this.form)" value="Login">
     </div>
-  </div>
 </form>
 
+<script>
+  // check if browser support indexedDB
+  if("indexedDB" in window) {
+      console.log("IndexedDB supported...");
+  } else {
+      console.log("No support...");
+  }
+
+  // Open the database for project
+  function goback(form) {
+      window.open('index.html')
+  }
+  function check(form) {
+      if(form.emailadd.value == "myemail" && form.psw.value == "mypsw"){
+          window.open('welcome.html')
+      }
+      else {
+          alert('Error Password or Email entered')
+      }
+  }
+</script>
 </body>
 </html>
