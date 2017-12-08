@@ -53,13 +53,14 @@ button {
 .play{
     position: relative;
     top:60px;
-  display: block;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 600;
-  background-image: url("../images/MarioBrick.png");
+      display: block;
+      cursor: pointer;
+      font-size: 50px;
+      font-weight: 600;
+/*      background-image: url("../images/MarioBrick.png");*/
     background-size: 100%;
-    background-color: #cc6600;
+    background-color: #ff8325;
+    border-radius: 50%;
 }
 .signup {
     position: relative;
