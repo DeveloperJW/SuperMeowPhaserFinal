@@ -85,11 +85,11 @@ body {
 <form name="login"">
 
     <label><b>Email</b></label><br>
-    <input type="text" placeholder="Enter Email" name="emailadd" required><br>
+    <input type="text" placeholder="Enter Email" id = "emailadd" name="emailadd" required><br>
 
 
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
 
 
     <input type="checkbox" checked="checked"> Remember me
@@ -97,20 +97,71 @@ body {
 
     <div class="clearfix">
       <input type="reset" class="cancelbtn" value="Go Play" onclick="goback(this.form)"/>
-      <input type="button" class="signupbtn" onclick="check(this.form)" value="Sign Up"/>
-      <input type="button" class="loginbtn" onclick="check(this.form)" value="Login">
+      <input type="button" id="signUp" class="signupbtn" onclick="check(this.form)" value="Sign Up"/>
+      <input type="button" id="login" class="loginbtn" onclick="check(this.form)" value="Login">
     </div>
 </form>
 
 <script>
   // check if browser support indexedDB
+  var indexedDBsupport = false;
   if("indexedDB" in window) {
+      indexedDBsupport = true;
       console.log("IndexedDB supported...");
   } else {
-      console.log("No support...");
+      console.log("No support for IndexedDB...");
   }
+  // Open the database for project, add events listeners
+  if(indexedDBsupport) {
+      var openDB = indexedDB.open("superMeow", 1);
+      openDB.onupgradeneeded = function(e) {
+          console.log("DB upgrade...");
+          //local var for db upgrade, create first objectStore
+          var upgradeDB = e.target.result;
+          if (!upgradeDB.objectStoreNames.contains("superMeowos")) {
+              upgradeDB.createObjectStore("superMeowos");
+              console.log("new object store created...")
+          }
+      }
+      openDB.onsuccess = function(e) {
+          console.log("DB success ...");
+          db = e.target.result;
 
-  // Open the database for project
+          //event handler for button
+          $("#signUp").on("tap", function(e){
+              e.preventDefault();
+              var emailadd = $("#emailadd").val();
+              var psw = $("#psw").val();
+              signUp(emailadd, psw);
+          })
+          //signUp function
+          function signUp(email, psw) {
+              //define user account info
+              var userInfo = {emailadd, psw};
+              // use transaction to bridge between app and database
+              var dbTransaction = db.transaction(["superMeowos"], "readwrite");
+              // use transaction to retrieve object store for data
+              var dataStore = dbTransaction.objectStore("superMeowos");
+              var addRequest = dataStore.add(userInfo,1);
+              addRequest.onsuccess = function(e) {
+                  console.log("data stored ...");
+
+              }
+              addRequest.onerror = function(e) {
+                  console.log(e.target.error.name);
+              }
+          }
+
+      }
+      openDB.onerror = function(e) {
+          console.log("DB error...");
+          console.dir(e);
+      }
+
+  }
+  // test support event
+
+
   function goback(form) {
       window.open('index.html')
   }
