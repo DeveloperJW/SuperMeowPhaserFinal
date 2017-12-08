@@ -98,7 +98,7 @@ body {
 
     <div class="clearfix">
       <input type="reset" class="cancelbtn" value="Go Play" onclick="goback(this.form)"/>
-      <input type="button" id="signUp" class="signupbtn" onclick="check(this.form)" value="Sign Up"/>
+      <input type="button" id="signUp" class="signupbtn"  value="Sign Up"/>
       <input type="button" id="login" class="loginbtn" onclick="check(this.form)" value="Login">
     </div>
 </form>
@@ -114,43 +114,50 @@ body {
   }
   // Open the database for project, add events listeners
   if(indexedDBsupport) {
-      var openDB = indexedDB.open("superMeow", 1);
+      var openDB = indexedDB.open("superMeow", 5);
       openDB.onupgradeneeded = function(e) {
           console.log("DB upgrade...");
           //local var for db upgrade, create first objectStore
           var upgradeDB = e.target.result;
           if (!upgradeDB.objectStoreNames.contains("superMeowos")) {
-              upgradeDB.createObjectStore("superMeowos");
+              upgradeDB.createObjectStore("superMeowos",{ autoIncrement:true });
               console.log("new object store created...")
           }
       }
       openDB.onsuccess = function(e) {
           console.log("DB success ...");
           db = e.target.result;
-
           //event handler for button
-          $("#signUp").on("tap", function(e){
+          $("#signUp").on("click", function(e){
               e.preventDefault();
               var emailadd = $("#emailadd").val();
               var psw = $("#psw").val();
               signUp(emailadd, psw);
           })
+
           //signUp function
-          function signUp(email, psw) {
+              function signUp(email, psw) {
               //define user account info
-              var userInfo = {emailadd, psw};
+              var userInfo = {
+                  Email:email,
+                  password:psw
+              };
               // use transaction to bridge between app and database
               var dbTransaction = db.transaction(["superMeowos"], "readwrite");
               // use transaction to retrieve object store for data
               var dataStore = dbTransaction.objectStore("superMeowos");
-              var addRequest = dataStore.add(userInfo,1);
+              var addRequest = dataStore.add(userInfo);
+
               addRequest.onsuccess = function(e) {
                   console.log("data stored ...");
-
+                  // do something
               }
               addRequest.onerror = function(e) {
                   console.log(e.target.error.name);
+                  //handle error
+                  alert("Database error: " + event.target.errorCode);
               }
+
           }
 
       }
@@ -167,7 +174,7 @@ body {
       window.open('index.html')
   }
   function check(form) {
-      if(form.emailadd.value == "myemail" && form.psw.value == "mypsw"){
+      if(form.emailadd.value === "myemail" && form.psw.value === "mypsw"){
           window.open('welcome.html')
       }
       else {
@@ -175,5 +182,6 @@ body {
       }
   }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
