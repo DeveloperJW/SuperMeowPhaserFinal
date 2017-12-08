@@ -67,7 +67,7 @@ Meow.GameState = {
     }
     else {
       this.player.animations.stop();
-      this.player.frame = 1;
+      this.player.frame = 2;
     }
 
     if((this.cursors.up.isDown || this.player.customParams.mustJump) && (this.player.body.blocked.down || this.player.body.touching.down)) {
@@ -112,15 +112,17 @@ Meow.GameState = {
     
     //create player
     var playerArr = this.findObjectsByType('player', this.map, 'objectsLayer');
-    this.player = this.add.sprite(playerArr[0].x, playerArr[0].y, 'player', 1);
+    //this.player = this.add.sprite(playerArr[0].x, playerArr[0].y, 'player', 0);
+    this.player=this.add.sprite(playerArr[0].x, playerArr[0].y, 'player',2);
     this.player.anchor.setTo(0.5);
     //this.player.animations.add('walking', [0, 1, 2, 1], 6, true);
-    this.player.animations.add('walking',[0,2,3,4,3,2],15,true);
+    //this.player.animations.add('walking',[1,2,3,5,3,2],10,true);
+    this.player.animations.add('walking',[0,5,7,8,1,3,6,4],10,true);
     this.game.physics.arcade.enable(this.player);
     this.player.customParams = {};
     this.player.body.collideWorldBounds = true;    
     //change player bounding box
-    //this.player.body.setSize(38, 60, 0, 0);
+    this.player.body.setSize(30, 53, 0, 0);
 
     //follow player with the camera
     this.game.camera.follow(this.player);

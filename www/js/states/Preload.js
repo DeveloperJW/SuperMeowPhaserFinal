@@ -19,8 +19,7 @@ Meow.PreloadState = {
     this.load.image('gold','assets/images/coinGold.png');
     //load background?
     this.load.image('background','assets/images/background.png');
-    //this.load.spritesheet('player', 'assets/images/player_spritesheet.png', 28, 30, 5, 1, 1);
-    this.load.spritesheet('player','assets/images/meow_cat.png',20,30,7,1,1);
+    this.load.spritesheet('player','assets/images/run.png',38,55,9,1,1);
     this.load.spritesheet('fly', 'assets/images/fly_spritesheet.png', 35, 18, 2, 1, 2);    
     this.load.image('arrowButton', 'assets/images/arrowButton.png');  
     //left arrow and right arrow
