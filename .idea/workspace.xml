@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="877b053c-6a84-4c1d-8430-e32529979b0a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/signup.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/signup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/login.html" afterPath="$PROJECT_DIR$/www/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/signup.html" afterPath="$PROJECT_DIR$/www/signup.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="signup.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="100" column="67" lean-forward="false" selection-start-line="100" selection-start-column="67" selection-end-line="100" selection-end-column="67" />
+            <state relative-caret-position="520">
+              <caret line="117" column="44" lean-forward="true" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -67,7 +64,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
               <caret line="103" column="67" lean-forward="true" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
-              <folding />
+              <folding>
+                <marker date="1512768854000" expanded="true" signature="2493:2747" ph="..." />
+                <marker date="1512768854000" expanded="true" signature="2519:2738" ph="{...}" />
+                <marker date="1512768854000" expanded="true" signature="2668:2732" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,7 +144,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="44" />
     <option name="width" value="1260" />
     <option name="height" value="733" />
@@ -224,10 +225,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23501000" />
+    <option name="totallyTimeSpent" value="23676000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="44" width="1260" height="733" extended-state="1" />
+    <frame x="0" y="44" width="1260" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -330,7 +331,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1512768854000" expanded="true" signature="2493:2747" ph="..." />
+            <marker date="1512768854000" expanded="true" signature="2519:2738" ph="{...}" />
+            <marker date="1512768854000" expanded="true" signature="2668:2732" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -417,7 +422,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="47">
           <caret line="98" column="9" lean-forward="false" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
-          <folding />
+          <folding>
+            <marker date="1512768854000" expanded="true" signature="2493:2747" ph="..." />
+            <marker date="1512768854000" expanded="true" signature="2519:2738" ph="{...}" />
+            <marker date="1512768854000" expanded="true" signature="2668:2732" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -504,7 +513,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="584">
           <caret line="54" column="9" lean-forward="false" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-          <folding />
+          <folding>
+            <marker date="1512768854000" expanded="true" signature="2493:2747" ph="..." />
+            <marker date="1512768854000" expanded="true" signature="2519:2738" ph="{...}" />
+            <marker date="1512768854000" expanded="true" signature="2668:2732" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -583,14 +596,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="103" column="67" lean-forward="true" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
-          <folding />
+          <folding>
+            <marker date="1512768854000" expanded="true" signature="2493:2747" ph="..." />
+            <marker date="1512768854000" expanded="true" signature="2519:2738" ph="{...}" />
+            <marker date="1512768854000" expanded="true" signature="2668:2732" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="100" column="67" lean-forward="false" selection-start-line="100" selection-start-column="67" selection-end-line="100" selection-end-column="67" />
+        <state relative-caret-position="520">
+          <caret line="117" column="44" lean-forward="true" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
           <folding />
         </state>
       </provider>
