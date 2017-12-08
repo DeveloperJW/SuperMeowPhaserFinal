@@ -1,14 +1,14 @@
-var ZPlat = ZPlat || {};
+var Meow = Meow || {};
 
-ZPlat.dim = ZPlat.getGameLandscapeDimensions(700, 350);
+Meow.dim = Meow.getGameLandscapeDimensions(700, 350);
 
-ZPlat.game = new Phaser.Game(ZPlat.dim.w, ZPlat.dim.h, Phaser.AUTO);
+Meow.game = new Phaser.Game(Meow.dim.w, Meow.dim.h, Phaser.AUTO);
 
-ZPlat.game.state.add('Boot', ZPlat.BootState); 
-ZPlat.game.state.add('Preload', ZPlat.PreloadState); 
+Meow.game.state.add('Boot', Meow.BootState); 
+Meow.game.state.add('Preload', Meow.PreloadState); 
 //can add menuw or home state here
-ZPlat.game.state.add('Home',ZPlat.HomeState);
+Meow.game.state.add('Home', Meow.HomeState);
 
-ZPlat.game.state.add('Game', ZPlat.GameState);
+Meow.game.state.add('Game', Meow.GameState);
 
-ZPlat.game.state.start('Boot'); 
+Meow.game.state.start('Boot'); 

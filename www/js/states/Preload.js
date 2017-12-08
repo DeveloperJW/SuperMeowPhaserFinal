@@ -1,7 +1,7 @@
-var ZPlat = ZPlat || {};
+var Meow = Meow || {};
 
 //loading the game assets
-ZPlat.PreloadState = {
+Meow.PreloadState = {
   preload: function() {
     //show loading screen
     this.preloadBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'preloadbar');
@@ -13,10 +13,14 @@ ZPlat.PreloadState = {
     //load game assets    
     this.load.image('platform', 'assets/images/platform.png');
     this.load.image('goal', 'assets/images/goal.png');
-    this.load.image('slime', 'assets/images/slime.png');
+    //this.load.image('slime', 'assets/images/slime.png');
+    this.load.image('slime','assets/images/mouse.png');
+    //load game coins
+    this.load.image('gold','assets/images/coinGold.png');
     //load background?
     this.load.image('background','assets/images/background.png');
-    this.load.spritesheet('player', 'assets/images/player_spritesheet.png', 28, 30, 5, 1, 1); 
+    //this.load.spritesheet('player', 'assets/images/player_spritesheet.png', 28, 30, 5, 1, 1);
+    this.load.spritesheet('player','assets/images/meow_cat.png',20,30,7,1,1);
     this.load.spritesheet('fly', 'assets/images/fly_spritesheet.png', 35, 18, 2, 1, 2);    
     this.load.image('arrowButton', 'assets/images/arrowButton.png');  
     //left arrow and right arrow
@@ -31,8 +35,10 @@ ZPlat.PreloadState = {
     this.load.image('gameTiles', 'assets/images/tiles_spritesheet.png');    
     this.load.tilemap('level1', 'assets/levels/level1.json', null, Phaser.Tilemap.TILED_JSON);
     this.load.tilemap('level2', 'assets/levels/level2.json', null, Phaser.Tilemap.TILED_JSON);
-      //add level 3
+    //add level 3
     this.load.tilemap('level3','assets/levels/level3.json',null,Phaser.Tilemap.TILED_JSON);
+    //load audios
+    this.load.audio('coin_sound', ['assets/audio/coin.mp3', 'assets/audio/coin.ogg']);
     
     
     

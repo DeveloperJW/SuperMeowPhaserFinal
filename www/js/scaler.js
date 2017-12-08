@@ -1,7 +1,7 @@
-var ZPlat = ZPlat || {};
+var Meow = Meow || {};
 
 //calculate the dimensions of the game so that 100% of the screen is occupied
-ZPlat.getGameLandscapeDimensions = function(max_w, max_h) {
+Meow.getGameLandscapeDimensions = function(max_w, max_h) {
   //get both w and h of the screen (some devices/browser measure this differntly, so you dont know for sure which one is which)
   var w = window.innerWidth * window.devicePixelRatio;
   var h = window.innerHeight * window.devicePixelRatio;
