@@ -1,7 +1,7 @@
-var ZPlat = ZPlat || {};
+var Meow = Meow || {};
 
 //setting game configuration and loading the assets for the loading screen
-ZPlat.BootState = {
+Meow.BootState = {
   init: function() {
     //loading screen will have a white background
     this.game.stage.backgroundColor = '#fff';

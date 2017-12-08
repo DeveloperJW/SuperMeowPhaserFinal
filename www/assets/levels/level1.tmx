@@ -593,12 +593,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="135"/>
-   <tile gid="0"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -607,33 +601,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="129"/>
-   <tile gid="92"/>
-   <tile gid="92"/>
-   <tile gid="92"/>
-   <tile gid="92"/>
-   <tile gid="92"/>
-   <tile gid="105"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="129"/>
-   <tile gid="92"/>
-   <tile gid="92"/>
-   <tile gid="92"/>
-   <tile gid="105"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -662,6 +629,39 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="129"/>
+   <tile gid="92"/>
+   <tile gid="92"/>
+   <tile gid="105"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="129"/>
+   <tile gid="92"/>
+   <tile gid="92"/>
+   <tile gid="92"/>
+   <tile gid="92"/>
+   <tile gid="105"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -708,6 +708,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="92"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -715,7 +716,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="114"/>
-   <tile gid="89"/>
    <tile gid="89"/>
    <tile gid="89"/>
    <tile gid="89"/>
@@ -818,50 +818,50 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="104"/>
+   <tile gid="104"/>
+   <tile gid="104"/>
+   <tile gid="104"/>
+   <tile gid="104"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="92"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="129"/>
    <tile gid="104"/>
    <tile gid="104"/>
    <tile gid="105"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="104"/>
-   <tile gid="104"/>
-   <tile gid="104"/>
-   <tile gid="104"/>
-   <tile gid="104"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="92"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="92"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -984,7 +984,7 @@
     <property name="type" value="goal"/>
    </properties>
   </object>
-  <object id="3" gid="146" x="365" y="275" width="35" height="35">
+  <object id="3" gid="146" x="359" y="313" width="35" height="35">
    <properties>
     <property name="type" value="enemy"/>
     <property name="velocity" value="120"/>
@@ -1026,11 +1026,6 @@
    </properties>
   </object>
   <object id="11" gid="146" x="315" y="174" width="35" height="35">
-   <properties>
-    <property name="type" value="enemy"/>
-   </properties>
-  </object>
-  <object id="12" gid="146" x="972" y="68" width="35" height="35">
    <properties>
     <property name="type" value="enemy"/>
    </properties>

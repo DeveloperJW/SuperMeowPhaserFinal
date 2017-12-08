@@ -1,6 +1,6 @@
-var ZPlat = ZPlat || {};
+var Meow = Meow || {};
 
-ZPlat.HomeState = {
+Meow.HomeState = {
     
     //preload: function(){
     //this.load.image('background','assets/images/background.png');

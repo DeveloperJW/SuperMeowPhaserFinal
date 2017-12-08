@@ -1,6 +1,6 @@
-var ZPlat = ZPlat || {};
+var Meow = Meow || {};
 
-ZPlat.GameState = {
+Meow.GameState = {
 
   init: function(level) {    
 
@@ -16,13 +16,23 @@ ZPlat.GameState = {
     
     //cursor keys to move the player
     this.cursors = this.game.input.keyboard.createCursorKeys();
-  },
+      
+    //coins
+      this.myCoins=0;
+      
+  },//end of init
   create: function() {
     //load current level
     this.loadLevel();
     //show on-screen touch controls
-    this.createOnscreenControls();    
-  },   
+    this.createOnscreenControls();
+    //coin sound
+    this.coinSound = this.add.audio('coin_sound');
+    //show number of coins
+    var style={font:'30px Arial', fill:'#fff'};
+    this.coinsCountLabel=this.add.text(10, 20, 'Coins: 0',style);
+    this.coinsCountLabel.fixedToCamera=true;
+  },   //end of create
   update: function() {    
     //collision between the player, enemies and the collision layer
     this.game.physics.arcade.collide(this.player, this.collisionLayer); 
@@ -34,17 +44,21 @@ ZPlat.GameState = {
     //overlap between player and goal
     this.game.physics.arcade.overlap(this.player, this.goal, this.changeLevel, null, this);
     
-    //generic platformer behavior (as in Monster Kong)
+      
+    //collision between player and coin
+    this.game.physics.arcade.overlap(this.player, this.coins, this.collectCoin, null, this);
+    
+    //generic platformer behavior
     this.player.body.velocity.x = 0;
 
     if(this.cursors.left.isDown || this.player.customParams.isMovingLeft) {
       this.player.body.velocity.x = -this.RUNNING_SPEED;
-      this.player.scale.setTo(1, 1);
+      this.player.scale.setTo(-1, 1);
       this.player.play('walking');
     }
     else if(this.cursors.right.isDown || this.player.customParams.isMovingRight) {
       this.player.body.velocity.x = this.RUNNING_SPEED;
-      this.player.scale.setTo(-1, 1);
+      this.player.scale.setTo(1, 1);
       this.player.play('walking');
     }
     else {
@@ -61,7 +75,7 @@ ZPlat.GameState = {
     if(this.player.bottom == this.game.world.height){
       this.gameOver();
     }
-  },
+  },//end of update
   loadLevel: function(){  
     //create a tilemap object
     this.map = this.add.tilemap(this.currentLevel);
@@ -91,12 +105,15 @@ ZPlat.GameState = {
     
     //create player
     var playerArr = this.findObjectsByType('player', this.map, 'objectsLayer');
-    this.player = this.add.sprite(playerArr[0].x, playerArr[0].y, 'player', 3);
+    this.player = this.add.sprite(playerArr[0].x, playerArr[0].y, 'player', 1);
     this.player.anchor.setTo(0.5);
-    this.player.animations.add('walking', [0, 1, 2, 1], 6, true);
+    //this.player.animations.add('walking', [0, 1, 2, 1], 6, true);
+    this.player.animations.add('walking',[0,2,3,4,3,2],15,true);
     this.game.physics.arcade.enable(this.player);
     this.player.customParams = {};
-    this.player.body.collideWorldBounds = true;
+    this.player.body.collideWorldBounds = true;    
+    //change player bounding box
+    //this.player.body.setSize(38, 60, 0, 0);
 
     //follow player with the camera
     this.game.camera.follow(this.player);
@@ -105,6 +122,16 @@ ZPlat.GameState = {
     this.enemies = this.add.group();
     this.createEnemies();
     
+    //create coins ----------------------------
+    this.coins=this.add.group();
+    this.createCoins();
+    //var coinArr=this.findObjectsByType('coin',this.map, 'objectLayer');
+    //add coin function here
+    //this.coin=this.add.sprite(coinArr[0].x,coinArr[0].y,'gold');
+    //this.coin.anchor.setTo(0.5);
+    //this.game.physics.arcade.enable(this.coin);
+    //this.coin.body.allowGravity=false;
+      
   },
   createOnscreenControls: function(){
     this.leftArrow = this.add.button(20, this.game.height - 80, 'arrowButton_left');
@@ -160,7 +187,7 @@ ZPlat.GameState = {
     this.rightArrow.events.onInputOut.add(function(){
       this.player.customParams.isMovingRight = false;
     }, this);
-  },
+  },//end of onScreen controller
   findObjectsByType: function(targetType, tilemap, layer){
     var result = [];
     
@@ -181,10 +208,19 @@ ZPlat.GameState = {
     var enemy;
     
     enemyArr.forEach(function(element){
-      enemy = new ZPlat.Enemy(this.game, element.x, element.y, 'slime', +element.properties.velocity, this.map);
+      enemy = new Meow.Enemy(this.game, element.x, element.y, 'slime', +element.properties.velocity, this.map);
       this.enemies.add(enemy);
     }, this);
   },
+    createCoins: function(){
+    var coinArr=this.findObjectsByType('coin',this.map,'objectsLayer');
+    var coin;
+    coinArr.forEach(function(element){
+        coin=new Meow.Coin(this.game, element.x,element.y,'gold',this.map);
+        this.coins.add(coin);
+    },this);
+        
+    },
   hitEnemy: function(player, enemy){
     if(enemy.body.touching.up){
       enemy.kill();
@@ -194,8 +230,16 @@ ZPlat.GameState = {
       this.gameOver();
     }
   },
+    collectCoin:function(player,coin){
+        if(coin.body.touching){
+            coin.kill();
+            this.myCoins++;
+            this.coinSound.play();
+            this.coinsCountLabel.text='Coins: '+this.myCoins;
+        }
+    },
   gameOver: function(){
     this.game.state.start('Game', true, false, this.currentLevel);
   }
   
-};
+};//name of GameState

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="40" height="12" tilewidth="35" tileheight="35" nextobjectid="31">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="40" height="12" tilewidth="35" tileheight="35" nextobjectid="17">
  <tileset firstgid="1" name="tiles_spritesheet" tilewidth="35" tileheight="35" spacing="1" tilecount="156" columns="12">
   <image source="../images/tiles_spritesheet.png" width="457" height="468"/>
+ </tileset>
+ <tileset firstgid="157" name="coinGold" tilewidth="35" tileheight="35" spacing="1" tilecount="1" columns="1">
+  <image source="../images/coinGold.png" width="35" height="35"/>
  </tileset>
  <layer name="backgroundLayer" width="40" height="12">
   <data>
@@ -716,10 +719,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="73"/>
-   <tile gid="73"/>
-   <tile gid="73"/>
-   <tile gid="73"/>
+   <tile gid="155"/>
+   <tile gid="155"/>
+   <tile gid="155"/>
+   <tile gid="155"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -747,88 +750,88 @@
    <tile gid="101"/>
    <tile gid="101"/>
    <tile gid="101"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="113"/>
+   <tile gid="113"/>
+   <tile gid="113"/>
+   <tile gid="113"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="101"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="113"/>
-   <tile gid="113"/>
-   <tile gid="113"/>
-   <tile gid="113"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="113"/>
    <tile gid="113"/>
    <tile gid="113"/>
@@ -869,9 +872,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="155"/>
+   <tile gid="155"/>
+   <tile gid="155"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -909,13 +912,13 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="155"/>
+   <tile gid="155"/>
+   <tile gid="155"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="141"/>
    <tile gid="153"/>
    <tile gid="153"/>
    <tile gid="153"/>
@@ -999,7 +1002,7 @@
     <property name="type" value="enemy"/>
    </properties>
   </object>
-  <object id="6" gid="146" x="716" y="100" width="35" height="35">
+  <object id="6" gid="146" x="739" y="104" width="35" height="35">
    <properties>
     <property name="type" value="enemy"/>
    </properties>
@@ -1020,102 +1023,17 @@
     <property name="velocity" value="80"/>
    </properties>
   </object>
-  <object id="11" gid="97" x="1248.88" y="36.875" width="35" height="35">
+  <object id="14" gid="157" x="671" y="34" width="35" height="35">
    <properties>
     <property name="type" value="coin"/>
    </properties>
   </object>
-  <object id="12" gid="97" x="1122.13" y="36.125" width="35" height="35">
+  <object id="15" gid="157" x="630" y="56" width="35" height="35">
    <properties>
     <property name="type" value="coin"/>
    </properties>
   </object>
-  <object id="13" gid="97" x="1164.63" y="36.625" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="14" gid="97" x="1206.38" y="36.375" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="15" gid="97" x="1357.88" y="251.875" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="16" gid="97" x="1231.13" y="251.125" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="17" gid="97" x="1273.63" y="251.625" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="18" gid="97" x="1315.38" y="251.375" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="19" gid="97" x="597.875" y="135.875" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="20" gid="97" x="471.125" y="135.125" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="21" gid="97" x="513.625" y="135.625" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="22" gid="97" x="555.375" y="135.375" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="23" gid="97" x="827.875" y="204.875" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="24" gid="97" x="701.125" y="204.125" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="25" gid="97" x="743.625" y="204.625" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="26" gid="97" x="785.375" y="204.375" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="27" gid="97" x="168.875" y="285.875" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="28" gid="97" x="42.125" y="285.125" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="29" gid="97" x="84.625" y="285.625" width="35" height="35">
-   <properties>
-    <property name="type" value="coin"/>
-   </properties>
-  </object>
-  <object id="30" gid="97" x="126.375" y="285.375" width="35" height="35">
+  <object id="16" gid="157" x="599" y="86" width="35" height="35">
    <properties>
     <property name="type" value="coin"/>
    </properties>

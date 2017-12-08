@@ -1,6 +1,6 @@
-var ZPlat = ZPlat || {};
+var Meow = Meow || {};
 
-ZPlat.Enemy = function(game, x, y, key, velocity, tilemap) {
+Meow.Enemy = function(game, x, y, key, velocity, tilemap) {
   Phaser.Sprite.call(this, game, x, y, key);
   
   this.game = game;
@@ -19,10 +19,10 @@ ZPlat.Enemy = function(game, x, y, key, velocity, tilemap) {
   this.body.velocity.x = velocity;
 };
 
-ZPlat.Enemy.prototype = Object.create(Phaser.Sprite.prototype);
-ZPlat.Enemy.prototype.constructor = ZPlat.Enemy;
+Meow.Enemy.prototype = Object.create(Phaser.Sprite.prototype);
+Meow.Enemy.prototype.constructor = Meow.Enemy;
 
-ZPlat.Enemy.prototype.update = function(){
+Meow.Enemy.prototype.update = function(){
   
   var direction
   
