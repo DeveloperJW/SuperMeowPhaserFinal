@@ -1,106 +1,32 @@
 <!DOCTYPE html>
 <html>
-<style>
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    font-family: Comic Sans MS;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
 
-body {
-  background: url('assets/images/background_large.png') no-repeat;
-  background-size: 100%;
-}
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Super Meow: Team C</title>
 
-/* Set a style for all buttons */
- {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-     
-}
+	</head>
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
-    font-family: Comic Sans MS;
-  font-size: larger;
-  font-weight: bold;
-}
-.signupbtn {
-  padding: 14px 20px;
-  background-color: green;
-  font-family: Comic Sans MS;
-  font-size:larger;
-  font-weight:bold;
-}
-.loginbtn {
-  padding: 14px 20px;
-  background-color: yellowgreen;
-  font-family: Comic Sans MS;
-  font-size:larger;
-  font-weight:bold;
-}
+	<body background="assets/images/background.png" >
 
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn,.loginbtn {
-    float: left;
-    width: 25%;
-    font-family: Comic Sans MS
-}
-
-/* Add padding to container elements */
-.container {
-    padding: 16px;
-  font-family: Comic Sans MS;
-}
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .signupbtn {
-       width: 100%;
-    }
-}
-</style>
-<body>
-
-<h2>Join Super Meow</h2>
-
+    <div class="container"><br><br>
 <form name="login"">
-
-    <label><b>Email</b></label><br>
+<h2>Register Now!</h2>
+    <label>Email</label><br>
     <input type="text" placeholder="Enter Email" id = "emailadd" name="emailadd" required><br>
 
 
-    <label><b>Password</b></label>
+    <label>Password</label><br>
     <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
 
+    <br><input type="checkbox" checked="checked"> Remember me
+    <p style="font-size:10px">By creating an account you agree to our <a href="#">Terms &#38; Privacy</a>.</p>
 
-    <input type="checkbox" checked="checked"> Remember me
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-    <div class="clearfix">
-      <input type="reset" class="cancelbtn" value="Go Back" onclick="location.href='index.html'"/>
       <input type="button" id="signUp" class="signupbtn"  value="Sign Up"/>
-
-    </div>
+      <input type="button" class="cancelbtn" value="Go Back" style="color:#D2691E" onclick="location.href='index.html'"/>
+  </div>
 </form>
 
 <script>
