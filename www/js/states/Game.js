@@ -122,7 +122,7 @@ Meow.GameState = {
     this.player.customParams = {};
     this.player.body.collideWorldBounds = true;    
     //change player bounding box
-    this.player.body.setSize(30, 53, 0, 0);
+    //this.player.body.setSize(30, 53, 0, 0);
 
     //follow player with the camera
     this.game.camera.follow(this.player);
@@ -279,7 +279,11 @@ Meow.GameState = {
       //save new high score
       localStorage.setItem('highScore', this.highScore);
     }
-  }
+  },
+    render: function()
+    {
+        this.game.debug.text(this.game.time.fps || '--', 20, 70, "#00ff00", "40px Courier");   
+    }
     
   
 };//name of GameState

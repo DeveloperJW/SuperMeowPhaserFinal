@@ -89,8 +89,8 @@
                  "type":"",
                  "visible":true,
                  "width":35,
-                 "x":359,
-                 "y":313
+                 "x":268,
+                 "y":171
                 }, 
                 {
                  "gid":146,
@@ -111,26 +111,6 @@
                  "width":35,
                  "x":211,
                  "y":349
-                }, 
-                {
-                 "gid":146,
-                 "height":35,
-                 "id":5,
-                 "name":"",
-                 "properties":
-                    {
-                     "type":"enemy"
-                    },
-                 "propertytypes":
-                    {
-                     "type":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":35,
-                 "x":718,
-                 "y":98
                 }, 
                 {
                  "gid":146,
@@ -231,26 +211,6 @@
                  "width":35,
                  "x":755,
                  "y":279
-                }, 
-                {
-                 "gid":146,
-                 "height":35,
-                 "id":11,
-                 "name":"",
-                 "properties":
-                    {
-                     "type":"enemy"
-                    },
-                 "propertytypes":
-                    {
-                     "type":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":35,
-                 "x":315,
-                 "y":174
                 }, 
                 {
                  "gid":146,
@@ -571,6 +531,126 @@
                  "width":35,
                  "x":795.375,
                  "y":194.375
+                }, 
+                {
+                 "gid":97,
+                 "height":35,
+                 "id":36,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"coin"
+                    },
+                 "propertytypes":
+                    {
+                     "type":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":35,
+                 "x":404.5,
+                 "y":277.5
+                }, 
+                {
+                 "gid":97,
+                 "height":35,
+                 "id":37,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"coin"
+                    },
+                 "propertytypes":
+                    {
+                     "type":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":35,
+                 "x":324.5,
+                 "y":277.5
+                }, 
+                {
+                 "gid":97,
+                 "height":35,
+                 "id":38,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"coin"
+                    },
+                 "propertytypes":
+                    {
+                     "type":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":35,
+                 "x":364.5,
+                 "y":277.5
+                }, 
+                {
+                 "gid":97,
+                 "height":35,
+                 "id":39,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"coin"
+                    },
+                 "propertytypes":
+                    {
+                     "type":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":35,
+                 "x":782.5,
+                 "y":56.5
+                }, 
+                {
+                 "gid":97,
+                 "height":35,
+                 "id":40,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"coin"
+                    },
+                 "propertytypes":
+                    {
+                     "type":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":35,
+                 "x":702.5,
+                 "y":56.5
+                }, 
+                {
+                 "gid":97,
+                 "height":35,
+                 "id":41,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"coin"
+                    },
+                 "propertytypes":
+                    {
+                     "type":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":35,
+                 "x":742.5,
+                 "y":56.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -578,7 +658,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":36,
+ "nextobjectid":42,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",
@@ -587,7 +667,7 @@
         {
          "columns":12,
          "firstgid":1,
-         "image":"..\/images\/tiles_spritesheet.png",
+         "image":"..\/..\/..\/..\/SuperMewoLoginShow\/www\/assets\/images\/tiles_spritesheet.png",
          "imageheight":468,
          "imagewidth":457,
          "margin":0,

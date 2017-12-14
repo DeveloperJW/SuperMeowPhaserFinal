@@ -43,6 +43,9 @@ Meow.PreloadState = {
     this.load.audio('coin_sound', ['assets/audio/coin.mp3', 'assets/audio/coin.ogg']);
     this.load.audio('kick','assets/audio/kick.mp3');
     this.load.audio('jump_sound','assets/audio/jump.mp3');
+      
+      //preload time
+      this.game.time.advancedTiming = true;
     
     
   },
