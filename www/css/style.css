@@ -1,7 +1,3 @@
-
-/* Full-width input fields */
-
-
 h1{
   /*font-size: 1.75em;*/
   /*font-family: chalkduster, fantasy;*/
@@ -32,7 +28,8 @@ body {
 .container {
     padding: 16px;
     text-align: center;
-
+    position: relative;
+    top:50px;
 }
 
 
@@ -45,9 +42,9 @@ button {
     font-family: Comic Sans MS;
     font-weight: 400;
     display: inline-block;
-    color: yellow;
+    /*color: yellow;*/
     padding: 10px 20px;
-    margin: 7px 0px;
+    margin: 6px 0px;
     border: none;
     border-radius: 8%;
     cursor: pointer;
@@ -57,22 +54,24 @@ button {
 
 .play{
     position: relative;
-    top:40px;
+    /*top:40px;*/
       display: block;
       cursor: pointer;
-      font-size: 55px;
+      font-size: 40px;
       font-weight: 600;
 /*      background-image: url("../images/MarioBrick.png");*/
     background-size: 100%;
-    background-color: #ff8325;
+    color: #ff0051;
+    background-color: 	#FFD700 ;
     border-radius: 50%;
     width: 30%;
 }
 
 .signup {
-    position: relative;
-    top:50px;
-    display: block;
+
+    /*top:50px;*/
+    display: inline-block;
+    position: center;
     cursor: pointer;
     background-color: green;
     color:yellowgreen;
@@ -84,9 +83,7 @@ button {
 }
 
 .login{
-  position: relative;
-  top:50px;
-  display: block;
+    display: inline-block;
   cursor: pointer;
   background-color: yellowgreen;
   color:green;
@@ -103,7 +100,7 @@ input[type=text], input[type=password] {
     width:230px;
     height:35px;
     padding: 10px 20px;
-    margin: 3px 0;
+    margin: 7px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -117,7 +114,7 @@ input[type=button] {
     font-weight: 200;
     display: inline-block;
     padding: 10px 20px;;
-    margin: 3px 0px;
+    margin: 7px 0px;
     border: none;
     border-radius: 8%;
     cursor: pointer;
@@ -151,6 +148,29 @@ input[type=button] {
 
   label{
     color:	#8B4513;
-    font-size:15px;
+    font-size: 20px;
     font-weight: bold;
   }
+
+span.back{
+  float:left;
+  /*padding-top:10px;*/
+display: inline-block;
+}
+.setting{
+  float:left;
+  display:block;
+  /*padding-top:10px;*/
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#b{
+  width: 450px;
+  text-align: right;
+}

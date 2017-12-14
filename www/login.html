@@ -8,20 +8,22 @@
       	</head>
 
   <body background="assets/images/background.png" >
-	<p align="center"><br>
-    <div class="container">
-<h2>Welcome Back!</h2>
-    <form id="formlogin"">
-    <label>Email</label><br>
-    <input type="text" placeholder="Enter Email" id = "emailadd" name="emailadd" required><br>
-    <label>Password</label><br>
-    <input type="password" placeholder="Enter Password" id="psw" name="psw" required><br>
-  <img alt="back" src="assets/images/back.png"  height="60" align="left" onclick="location.href='index.html'"/>
-<div class="clearfix">
 
-        <input type="button" id="login" class="loginbtn" value="Log In" onclick="location.href='play.html'"/ > <label>or</label>
-        <input type="button" class="signupnowbtn" value="Register Now"  onclick="location.href='signup.html'"/>
-</div>
+    <div class="container">
+        <img src="assets/images/logo.png" alt="logo" width="100" ><br>
+      <label>Welcome Back!</label>
+      <div id="b">
+            <form id="formlogin"">
+
+          <b>Email</b>  <input type="text" placeholder="Enter Email" id = "emailadd" name="emailadd" required><br>
+          <b>Password</b> <input type="password"  placeholder="Enter Password" id="psw" name="psw" required><br>
+          </div>
+              <input type="button" id="login" class="loginbtn" value="Log In" onclick="location.href='play.html'"/ > <label>or</label>
+              <input type="button" class="signupnowbtn" value="Register Now"  onclick="location.href='signup.html'"/>
+              <span class="back">
+      <img alt="back" src="assets/images/back.png"  height="60"  align="left" onclick="location.href='index.html'"/>
+    </span>
+      </div>
 
 
 
@@ -39,7 +41,7 @@
         }
     </script>
   </div>
-</p>
+
 
 </body>
 </html>
