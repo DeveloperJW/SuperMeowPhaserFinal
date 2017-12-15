@@ -42,23 +42,17 @@
         promise.catch(e =>console.log(e.message));
         
     });
-    // logout
-    btnLogout.addEventListener('click',e=>{
-        firebase.auth().signOut();
-    });
     
     //add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser=>{
         if(firebaseUser){
             console.log(firebaseUser);
             console.log('logged in');
-            btnLogout.classList.remove('hide');
             alert("You are logged in! Welcome back!");
             window.location="play.html";
             
         }else{
-            console.log('Not logged in');
-            btnLogout.classList.add('hide');
+            console.log('not logged in');
         }
     });
     
