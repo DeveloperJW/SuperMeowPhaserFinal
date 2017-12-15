@@ -46,21 +46,22 @@
     btnLogout.addEventListener('click',e=>{
         firebase.auth().signOut();
     });
-    
+
     //add a realtime listener
+
     firebase.auth().onAuthStateChanged(firebaseUser=>{
         if(firebaseUser){
             console.log(firebaseUser);
             console.log('logged in');
-            btnLogout.classList.remove('logoutbtn-hide');
             alert("You are logged in! Welcome back!");
+            btnLogout.classList.remove('logoutbtn-hide');
 
-            
-        } else{
-            console.log('Not logged in');
+
+        }else{
+            console.log('not logged in');
             btnLogout.classList.add('logoutbtn-hide');
-        }
-    });
-    
-    
+}
+});
+
+
 }());
