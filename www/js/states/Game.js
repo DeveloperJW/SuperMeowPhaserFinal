@@ -18,8 +18,15 @@ Meow.GameState = {
     this.cursors = this.game.input.keyboard.createCursorKeys();
       
     //coins
-      //TODO: store current coins
-      this.myCoins=0;
+      
+    //TODO: store current coins
+    //this.myCoins=0;
+    this.myCoins=+localStorage.getItem('currentCoin');
+    //store the coins from the previous level
+    //this.currentCoin=+localStorage.getItem('currentCoin');
+    
+    //save current coin
+    //localStorage.setItem('currentCoin',this.currentCoin);
       
   },//end of init
   create: function() {
@@ -205,6 +212,8 @@ Meow.GameState = {
   changeLevel: function(player, goal){
     this.game.state.start('Game', true, false, goal.nextLevel);
       //TODO: need to store current coin number
+      //save current coin
+    localStorage.setItem('currentCoin',this.myCoins);
       
       
   },
@@ -248,6 +257,7 @@ Meow.GameState = {
   gameOver: function(){
     this.player.kill();
     this.updateHighscore();
+    localStorage.setItem('currentCoin', 0);
     //game over messages
     var style={font:'30px Arial', fill:'#fff'};
     this.gameOverLabel=this.add.text(this.game.width/2, this.game.height/2-30, 'GAME OVER', style);
