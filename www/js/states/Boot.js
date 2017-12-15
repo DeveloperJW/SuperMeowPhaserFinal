@@ -15,6 +15,11 @@ Meow.BootState = {
     //have the game centered horizontally
     this.scale.pageAlignHorizontally = true;
     this.scale.pageAlignVertically = true;
+    
+    //cordova device ready test
+    this.game.device.whenReady(function(){
+        console.log('Is Cordova Device ready? '+this.game.device.cordova);
+    },this);
 
     //physics system
     this.game.physics.startSystem(Phaser.Physics.ARCADE);    
