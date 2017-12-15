@@ -23,20 +23,16 @@
     <button class="play" onclick="location.href='play.html'" >Play </button>
 	  <button class="login" align="center"onclick="location.href='login.html'">Log In</button>
     <button class="signup" align="center"onclick="location.href='signup.html'">Sign Up</button>
-	<!--
 	<button class="logoutbtn logoutbtn-hide" align="center" id="btnLogout">Log Out</button>
-	-->
 
 	<script>
         firebase.auth().onAuthStateChanged(firebaseUser=>{
         if(firebaseUser){
-            var button = document.createElement("button");
+            document.createElement("button");
             button.innerHTML="Log out";
-            var body = document.getElementsByTagName("body")[0];
-            body.appendChild(button);
             button.addEventListener('click',e=>{
         firebase.auth().signOut();
-    	});
+    });
             
         }else{
             console.log('not logged in');
