@@ -17,16 +17,10 @@ Meow.GameState = {
     //cursor keys to move the player
     this.cursors = this.game.input.keyboard.createCursorKeys();
       
-    //coins
-      
-    //TODO: store current coins
+    //DONE: store current coins
     //this.myCoins=0;
+    //get the number of coins from localStorage
     this.myCoins=+localStorage.getItem('currentCoin');
-    //store the coins from the previous level
-    //this.currentCoin=+localStorage.getItem('currentCoin');
-    
-    //save current coin
-    //localStorage.setItem('currentCoin',this.currentCoin);
       
   },//end of init
   create: function() {
@@ -42,6 +36,13 @@ Meow.GameState = {
     var style={font:'30px Arial', fill:'#fff'};
     this.coinsCountLabel=this.add.text(10, 20, 'Coins: '+this.myCoins,style);
     this.coinsCountLabel.fixedToCamera=true;
+    //the following code are for virtual joystick
+    this.pad = this.game.plugins.add(Phaser.VirtualJoystick);
+    this.stick = this.pad.addStick(0, 0, 100, 'generic');
+    //scale the stick size to 50%
+    this.stick.scale=0.5;
+    this.stick.alignBottomLeft(20);
+    this.stick.motionLock = Phaser.VirtualJoystick.HORIZONTAL;
       
   },   //end of create
   update: function() {    
@@ -61,13 +62,14 @@ Meow.GameState = {
     
     //generic platformer behavior
     this.player.body.velocity.x = 0;
+    
 
-    if(this.cursors.left.isDown || this.player.customParams.isMovingLeft) {
+    if(this.cursors.left.isDown || (this.stick.isDown && this.stick.forceX<0)) {
       this.player.body.velocity.x = -this.RUNNING_SPEED;
       this.player.scale.setTo(-1, 1);
       this.player.play('walking');
     }
-    else if(this.cursors.right.isDown || this.player.customParams.isMovingRight) {
+    else if(this.cursors.right.isDown || (this.stick.isDown && this.stick.forceX>0)) {
       this.player.body.velocity.x = this.RUNNING_SPEED;
       this.player.scale.setTo(1, 1);
       this.player.play('walking');
@@ -143,16 +145,10 @@ Meow.GameState = {
     this.createCoins();
   },
   createOnscreenControls: function(){
-    this.leftArrow = this.add.button(20, this.game.height - 80, 'arrowButton_left');
-    this.rightArrow = this.add.button(110, this.game.height - 80, 'arrowButton_right');
     this.actionButton = this.add.button(this.game.width - 120, this.game.height - 100, 'actionButton');
 
-    this.leftArrow.alpha = 0.5;
-    this.rightArrow.alpha = 0.5;
     this.actionButton.alpha = 0.5;
 
-    this.leftArrow.fixedToCamera = true;
-    this.rightArrow.fixedToCamera = true;
     this.actionButton.fixedToCamera = true;
 
     this.actionButton.events.onInputDown.add(function(){
@@ -162,40 +158,8 @@ Meow.GameState = {
     this.actionButton.events.onInputUp.add(function(){
       this.player.customParams.mustJump = false;
     }, this);
-
-    //left
-    this.leftArrow.events.onInputDown.add(function(){
-      this.player.customParams.isMovingLeft = true;
-    }, this);
-
-    this.leftArrow.events.onInputUp.add(function(){
-      this.player.customParams.isMovingLeft = false;
-    }, this);
-
-    this.leftArrow.events.onInputOver.add(function(){
-      this.player.customParams.isMovingLeft = true;
-    }, this);
-
-    this.leftArrow.events.onInputOut.add(function(){
-      this.player.customParams.isMovingLeft = false;
-    }, this);
-
-    //right
-    this.rightArrow.events.onInputDown.add(function(){
-      this.player.customParams.isMovingRight = true;
-    }, this);
-
-    this.rightArrow.events.onInputUp.add(function(){
-      this.player.customParams.isMovingRight = false;
-    }, this);
-
-    this.rightArrow.events.onInputOver.add(function(){
-      this.player.customParams.isMovingRight = true;
-    }, this);
-
-    this.rightArrow.events.onInputOut.add(function(){
-      this.player.customParams.isMovingRight = false;
-    }, this);
+    
+      
   },//end of onScreen controller
   findObjectsByType: function(targetType, tilemap, layer){
     var result = [];

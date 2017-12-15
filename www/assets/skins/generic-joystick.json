@@ -70,7 +70,7 @@
 	"image": "generic-joystick.png",
 	"format": "RGBA8888",
 	"size": {"w":682,"h":228},
-	"scale": "0.5",
+	"scale": "1",
 	"smartupdate": "$TexturePacker:SmartUpdate:e9879c3113ba01e8301c41ff8a522461:27f6351bd7b0a375a2a8ff5a01af291c:39ee24d5067dbc6be070854b489a5e77$"
 }
 }
