@@ -32,6 +32,10 @@ Meow.GameState = {
     this.coinSound = this.add.audio('coin_sound');
     //hit enemy sound
     this.hitSound=this.add.audio('kick');
+    //game over sound
+    this.gameoverSound=this.add.audio('gameover');
+    //background music
+    this.backgroundSound=this.add.audio('background_music');
     //show number of coins
     var style={font:'30px Arial', fill:'#fff'};
     this.coinsCountLabel=this.add.text(10, 20, 'Coins: '+this.myCoins,style);
@@ -45,9 +49,11 @@ Meow.GameState = {
     this.stick.apha=0.5;
     this.stick.alignBottomLeft(20);
     this.stick.motionLock = Phaser.VirtualJoystick.HORIZONTAL;
+    //play background music
+    this.backgroundSound.play();
       
   },   //end of create
-  update: function() {    
+  update: function() { 
     //collision between the player, enemies and the collision layer
     this.game.physics.arcade.collide(this.player, this.collisionLayer); 
     this.game.physics.arcade.collide(this.enemies, this.collisionLayer); 
@@ -176,6 +182,8 @@ Meow.GameState = {
     return result;
   },
   changeLevel: function(player, goal){
+      //stop the background music of current level
+      this.backgroundSound.stop();
     this.game.state.start('Game', true, false, goal.nextLevel);
       //TODO: need to store current coin number
       //save current coin
@@ -222,6 +230,10 @@ Meow.GameState = {
     },
   gameOver: function(){
     this.player.kill();
+      //stop the background
+      this.backgroundSound.stop();
+    //play the game over sound
+    this.gameoverSound.play();
     this.updateHighscore();
     localStorage.setItem('currentCoin', 0);
     //game over messages
