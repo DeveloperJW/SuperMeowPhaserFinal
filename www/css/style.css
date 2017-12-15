@@ -145,6 +145,16 @@ input[type=button] {
         color:yellowgreen;
 
         }
+.logoutbtn {
+
+    background-color: green;
+    color:yellowgreen;
+}
+.logoutbtn-hide {
+    display: none;
+    background-color: green;
+    color:yellowgreen;
+}
 
   label{
     color:	#8B4513;

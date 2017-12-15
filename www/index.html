@@ -23,7 +23,9 @@
     <button class="play" onclick="location.href='play.html'" >Play </button>
 	  <button class="login" align="center"onclick="location.href='login.html'">Log In</button>
     <button class="signup" align="center"onclick="location.href='signup.html'">Sign Up</button>
-    <script>
+	<button class="logoutbtn logoutbtn-hide" align="center" id="btnLogout">Log Out</button>
+
+	<script>
         firebase.auth().onAuthStateChanged(firebaseUser=>{
         if(firebaseUser){
             document.createElement("button");
@@ -36,7 +38,7 @@
             console.log('not logged in');
         }});
     </script>
-
+	<script src="app.js"></script>
 <!-- <div class="setting">
 <img border="0" alt="setting" src="assets/images/setting.png" width="40" height="40" align="left" onclick="location.href='tutor.html'"/>
 </div> -->
