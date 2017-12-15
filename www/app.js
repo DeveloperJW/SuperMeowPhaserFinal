@@ -52,13 +52,13 @@
         if(firebaseUser){
             console.log(firebaseUser);
             console.log('logged in');
-            btnLogout.classList.remove('hide');
+            btnLogout.classList.remove('logoutbtn-hide');
             alert("You are logged in! Welcome back!");
-            window.location="play.html";
+
             
-        }else{
+        } else{
             console.log('Not logged in');
-            btnLogout.classList.add('hide');
+            btnLogout.classList.add('logoutbtn-hide');
         }
     });
     

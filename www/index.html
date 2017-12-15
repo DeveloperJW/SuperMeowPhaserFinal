@@ -25,20 +25,8 @@
     <button class="signup" align="center"onclick="location.href='signup.html'">Sign Up</button>
 	<button class="logoutbtn logoutbtn-hide" align="center" id="btnLogout">Log Out</button>
 
-	<script>
-        firebase.auth().onAuthStateChanged(firebaseUser=>{
-        if(firebaseUser){
-            document.createElement("button");
-            button.innerHTML="Log out";
-            button.addEventListener('click',e=>{
-        firebase.auth().signOut();
-    });
-            
-        }else{
-            console.log('not logged in');
-        }});
-    </script>
 	<script src="app.js"></script>
+	
 <!-- <div class="setting">
 <img border="0" alt="setting" src="assets/images/setting.png" width="40" height="40" align="left" onclick="location.href='tutor.html'"/>
 </div> -->
