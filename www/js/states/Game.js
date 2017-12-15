@@ -41,6 +41,8 @@ Meow.GameState = {
     this.stick = this.pad.addStick(0, 0, 100, 'generic');
     //scale the stick size to 50%
     this.stick.scale=0.5;
+    //make the joystick more transparent
+    this.stick.apha=0.5;
     this.stick.alignBottomLeft(20);
     this.stick.motionLock = Phaser.VirtualJoystick.HORIZONTAL;
       

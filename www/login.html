@@ -5,7 +5,7 @@
       		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
               <link rel="stylesheet" type="text/css" href="css/style.css">
             <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-      		<title>Super Meow: Team C</title>
+            <title>Super Meow: Team C</title>
       	</head>
 
   <body background="assets/images/background.png" >
@@ -14,77 +14,21 @@
         <img src="assets/images/logo.png" alt="logo" width="100" ><br>
       <label>Welcome Back!</label>
       <div id="b">
-            <form id="formlogin"">
+            <form id="formlogin">
 
-          <b>Email</b>  <input type="text" placeholder="Enter Email" id = "emailadd" name="emailadd" required><br>
-          <b>Password</b> <input type="password"  placeholder="Enter Password" id="psw" name="psw" required><br>
-          </div>
-              <input type="button" id="loginbtn" class="loginbtn" value="Log In" > <label>or</label>
-              <input type="button" id = "signupbtn" class="signupnowbtn" value="Register Now"  onclick="location.href='signup.html'"/>
-              <button id="logoutbtn" class="logoutbtn btn-action hide">Log Out</button>
+          <b>Email</b>  <input type="text" placeholder="Enter Email" id = "txtEmail" name="emailadd" required><br>
+          <b>Password</b> <input type="password" placeholder="Enter Password" id="txtPassword" name="psw" required><br>
+          </form>
+        </div>
+              <input type="button" id="btnLogin" class="loginbtn" value="Log In"/>
+              <input type="button" id = "btnSignUp" class="signupnowbtn" value="Register Now"/>
+        
               <span class="back">
       <img alt="back" src="assets/images/back.png"  height="60"  align="left" onclick="location.href='index.html'"/>
     </span>
       </div>
 
-
-
-    </form>
-    <!-- adding Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-    <script>
-        (function() {
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDiZjDbVuGQSRW1uzCmTAbqfH-CfLGuitI",
-            authDomain: "supermeow-dc20c.firebaseapp.com",
-            databaseURL: "https://supermeow-dc20c.firebaseio.com",
-            projectId: "supermeow-dc20c",
-            storageBucket: "supermeow-dc20c.appspot.com",
-            messagingSenderId: "689979976743"
-        };
-        firebase.initializeApp(config);
-        // get elements
-            const email = document.getElementById("emailadd");
-            const password = document.getElementById("psw");
-            const loginbtn = document.getElementById("loginbtn");
-            const signupbtn = document.getElementById("signupbtn");
-            const logoutbtn = document.getElementById("logoutbtn");
-            // add login events
-            loginbtn.addEventListener('click', e => {
-                //get email and password
-                const emailval = email.value;
-                const passwordval = password.value;
-                const auth = firebase.auth();
-            //sign in
-                const promise = auth.signInWithEmailAndPassword(emailval, passwordval);
-                promise.catch(e=>console.log(e.message));
-            });
-
-
-        }());
-
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
-
-
-
-    <script>
-
-        function check(form) {
-            if(form.emailadd.value === "email@gmail.com" && form.psw.value === "mypsw"){
-                location.href='play.html';
-            }
-            else {
-                alert('Error Password or Email entered')
-            }
-        }
-    </script>
-  </div>
+    <script src="app.js"></script>
 
 
 </body>

@@ -4,127 +4,34 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+        <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
 		<title>Super Meow: Team C</title>
 
 	</head>
 
-	<body background="assets/images/background.png" >
+	<body background="assets/images/background.png">
 
     <div class="container">
-			        <img src="assets/images/logo.png" alt="logo" width="100" >
-							<!-- <h2>Register Now!</h2> -->
-<form name="login"">
+        <img src="assets/images/logo.png" alt="logo" width="100" >
+        </div>
+        <h2>Register Now!</h2>
+<form name="login">
       <div id="b">
     <b>Email</b>
-    <input type="text" placeholder="Enter Email" id = "emailadd" name="emailadd" required><br>
+    <input type="text" placeholder="Enter Email" id = "txtEmail" name="emailadd"/><br>
     <b>Password</b>
-    <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
-</div>
+    <input type="password" placeholder="Enter Password" id="txtPassword" name="psw"/>
+    </div>
   <input type="checkbox" checked="checked"> Remember me
 <span style="font-size:10px">By creating an account you agree to our <a href="#">Terms &#38; Privacy</a>.</span> 
 <div align="center">
-		 <img alt="back" src="assets/images/back.png"  height="60"  align="left" onclick="location.href='index.html'"/>
-			<input type="button" id="signUp" class="signupbtn" value="Sign Up"/> or
-      <input type="button" class="loginbtn" value="Log In" onclick="location.href='login.html'"/>
+		 <img alt="back" src="assets/images/back.png"  height="60"  align="left" 
+              onclick="location.href='index.html'"/>
+    <input type="button" id="btnSignUp" class="signupbtn" value="Sign Up"/>
+    <input type="button" id="btnLogin" class="loginButton" value="Log In" onclick="location.href='login.html'"/>
 </div>
-	</div>
-
 </form>
-    <!-- adding Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDiZjDbVuGQSRW1uzCmTAbqfH-CfLGuitI",
-            authDomain: "supermeow-dc20c.firebaseapp.com",
-            databaseURL: "https://supermeow-dc20c.firebaseio.com",
-            projectId: "supermeow-dc20c",
-            storageBucket: "supermeow-dc20c.appspot.com",
-            messagingSenderId: "689979976743"
-        };
-        firebase.initializeApp(config);
-    </script>
-<script>
-  // check if browser support indexedDB
-  var indexedDBsupport = false;
-  if("indexedDB" in window) {
-      indexedDBsupport = true;
-      console.log("IndexedDB supported...");
-  } else {
-      console.log("No support for IndexedDB...");
-  }
-  // Open the database for project, add events listeners
-  if(indexedDBsupport) {
-      var openDB = indexedDB.open("superMeow", 5);
-      openDB.onupgradeneeded = function(e) {
-          console.log("DB upgrade...");
-          //local var for db upgrade, create first objectStore
-          var upgradeDB = e.target.result;
-          if (!upgradeDB.objectStoreNames.contains("superMeowos")) {
-              upgradeDB.createObjectStore("superMeowos",{ autoIncrement:true });
-              console.log("new object store created...")
-          }
-      }
-      openDB.onsuccess = function(e) {
-          console.log("DB success ...");
-          db = e.target.result;
-          //event handler for button
-          $("#signUp").on("click", function(e){
-              e.preventDefault();
-              var emailadd = $("#emailadd").val();
-              var psw = $("#psw").val();
-              signUp(emailadd, psw);
-          })
-
-          //signUp function
-              function signUp(email, psw) {
-              //define user account info
-              var userInfo = {
-                  Email:email,
-                  password:psw
-              };
-              // use transaction to bridge between app and database
-              var dbTransaction = db.transaction(["superMeowos"], "readwrite");
-              // use transaction to retrieve object store for data
-              var dataStore = dbTransaction.objectStore("superMeowos");
-              var addRequest = dataStore.add(userInfo);
-
-              addRequest.onsuccess = function(e) {
-                  console.log("data stored ...");
-                  // do something
-              }
-              addRequest.onerror = function(e) {
-                  console.log(e.target.error.name);
-                  //handle error
-                  alert("Database error: " + event.target.errorCode);
-              }
-
-          }
-
-      }
-      openDB.onerror = function(e) {
-          console.log("DB error...");
-          console.dir(e);
-      }
-
-  }
-  // test support event
-
-
-  function goback(form) {
-      window.open('index.html')
-  }
-  function check(form) {
-      if (form.emailadd.value === "email@gmail.com" && form.psw.value === "mypsw"){
-          window.open('play.html');
-
-      }
-      else {
-          alert('Error Password or Email entered')
-      }
-  }
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

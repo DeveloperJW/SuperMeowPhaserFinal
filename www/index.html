@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
         <link rel="stylesheet" type="text/css" href="css/style.css">
 		<title>Super Meow: Team C</title>
+         <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
 	</head>
 
 	<body background="assets/images/background.png" >
@@ -22,6 +23,19 @@
     <button class="play" onclick="location.href='play.html'" >Play </button>
 	  <button class="login" align="center"onclick="location.href='login.html'">Log In</button>
     <button class="signup" align="center"onclick="location.href='signup.html'">Sign Up</button>
+    <script>
+        firebase.auth().onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser){
+            document.createElement("button");
+            button.innerHTML="Log out";
+            button.addEventListener('click',e=>{
+        firebase.auth().signOut();
+    });
+            
+        }else{
+            console.log('not logged in');
+        }});
+    </script>
 
 <!-- <div class="setting">
 <img border="0" alt="setting" src="assets/images/setting.png" width="40" height="40" align="left" onclick="location.href='tutor.html'"/>
@@ -37,20 +51,6 @@
 		</a>
 
 <!-- <button class="button start" onclick="document.getElementById('id03').style.display='block'" style="width:auto;"><a href="index.html">Play</a></button> -->
-		<!-- adding Firebase -->
-		<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-		<script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyDiZjDbVuGQSRW1uzCmTAbqfH-CfLGuitI",
-                authDomain: "supermeow-dc20c.firebaseapp.com",
-                databaseURL: "https://supermeow-dc20c.firebaseio.com",
-                projectId: "supermeow-dc20c",
-                storageBucket: "supermeow-dc20c.appspot.com",
-                messagingSenderId: "689979976743"
-            };
-            firebase.initializeApp(config);
-		</script>
 	</body>
 </html>
 
