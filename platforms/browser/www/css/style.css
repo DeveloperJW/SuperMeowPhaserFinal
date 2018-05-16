@@ -1,0 +1,186 @@
+h1{
+  /*font-size: 1.75em;*/
+  /*font-family: chalkduster, fantasy;*/
+  font-family: Comic Sans MS;
+  font-size: 280%;
+  text-align: center;
+  color: mediumblue;
+}
+
+h2{
+  font-size: 1.75em;
+  /*font-family: chalkduster, fantasy;*/
+  /*font-family: Comic Sans MS;*/
+  text-align: center;
+  color: #8B4513;
+
+}
+body {
+    background-repeat: no-repeat;
+    /*background-size: 250% auto;*/
+    font-family: Comic Sans MS;
+    background-size: 130% ;
+    background-position: center;
+        background-attachment: fixed;
+
+}
+
+.container {
+    padding: 16px;
+    text-align: center;
+    position: relative;
+    top:50px;
+}
+
+
+
+/* Set a style for all buttons */
+button {
+    /*background-image: url("../images/MarioBrick.png");*/
+    background-size: 100%;
+    font-size: 20px;
+    font-family: Comic Sans MS;
+    font-weight: 400;
+    display: inline-block;
+    /*color: yellow;*/
+    padding: 10px 20px;
+    margin: 6px 0px;
+    border: none;
+    border-radius: 8%;
+    cursor: pointer;
+    width: 20%;
+    height: 20%;
+}
+
+.play{
+    position: relative;
+    /*top:40px;*/
+      display: block;
+      cursor: pointer;
+      font-size: 40px;
+      font-weight: 600;
+/*      background-image: url("../images/MarioBrick.png");*/
+    background-size: 100%;
+    color: #ff0051;
+    background-color: 	#FFD700 ;
+    border-radius: 50%;
+    width: 30%;
+}
+
+.signup {
+
+    /*top:50px;*/
+    display: inline-block;
+    position: center;
+    cursor: pointer;
+    background-color: green;
+    color:yellowgreen;
+/*#8FBC8F*/
+    /*font-size: 20px;
+    font-weight: 600;*/
+/*    background-image: url("../images/MarioBrick.png");*/
+    /*background-size: 100%;*/
+}
+
+.login{
+    display: inline-block;
+  cursor: pointer;
+  background-color: yellowgreen;
+  color:green;
+}
+
+.backbtn{
+  background-color: #FFE4B5;
+  color:		#D2691E;
+}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    width:230px;
+    height:35px;
+    padding: 10px 20px;
+    margin: 7px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+input[type=button] {
+    background-size: 100%;
+    font-size: 20px;
+    font-family: Comic Sans MS;
+    font-weight: 200;
+    display: inline-block;
+    padding: 10px 20px;;
+    margin: 7px 0px;
+    border: none;
+    border-radius: 8%;
+    cursor: pointer;
+    /*width: 20%;
+    height: 20%;*/
+}
+
+.loginbtn {
+  /*background-color: green;
+  color:yellowgreen;*/
+  background-color: yellowgreen;
+  color:green;
+  }
+
+  /*.secondbtn{
+    background-color: #FFE4B5;
+    color:		#D2691E;
+  }*/
+
+  .signupnowbtn {
+    background-color: green;
+    color:yellowgreen;
+        width: 25%;
+    }
+
+      .signupbtn {
+        background-color: green;
+        color:yellowgreen;
+
+        }
+.logoutbtn {
+
+    background-color: green;
+    color:yellowgreen;
+}
+.logoutbtn-hide {
+    display: none;
+    background-color: green;
+    color:yellowgreen;
+}
+
+  label{
+    color:	#8B4513;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+span.back{
+  float:left;
+  /*padding-top:10px;*/
+display: inline-block;
+}
+.setting{
+  float:left;
+  display:block;
+  /*padding-top:10px;*/
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#b{
+  width: 450px;
+  text-align: right;
+}

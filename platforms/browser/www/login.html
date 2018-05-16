@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+        <head>
+      		<meta charset="utf-8" />
+      		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+              <link rel="stylesheet" type="text/css" href="css/style.css">
+            <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+            <title>Super Meow: Team C</title>
+      	</head>
+
+  <body background="assets/images/background.png" >
+
+    <div class="container">
+        <img src="assets/images/logo.png" alt="logo" width="100" ><br>
+      <label>Welcome Back!</label>
+      <div id="b">
+            <form id="formlogin">
+
+          <b>Email</b>  <input type="text" placeholder="Enter Email" id = "txtEmail" name="emailadd" required><br>
+          <b>Password</b> <input type="password" placeholder="Enter Password" id="txtPassword" name="psw" required><br>
+          </form>
+        </div>
+              <input type="button" id="btnLogin" class="loginbtn" value="Log In"/>
+              <input type="button" id = "btnSignUp" class="signupnowbtn" value="Register Now" 
+                     onclick="location.href='signup.html'"/>
+        <button class="logoutbtn logoutbtn-hide" align="center" id="btnLogout">Log Out</button>
+        
+              <span class="back">
+      <img alt="back" src="assets/images/back.png"  height="60"  align="left" onclick="location.href='index.html'"/>
+    </span>
+      </div>
+
+    <script src="app.js"></script>
+
+
+</body>
+</html>

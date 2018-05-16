@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<title>Super Meow: Team C</title>
+
+		<style>
+		  body {
+		  	background-color: black;
+		    padding: 0px;
+		    margin: 0px;
+		  }
+		  </style>
+	</head>
+
+	<body>
+	<!-- adding Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+	<script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDiZjDbVuGQSRW1uzCmTAbqfH-CfLGuitI",
+            authDomain: "supermeow-dc20c.firebaseapp.com",
+            databaseURL: "https://supermeow-dc20c.firebaseio.com",
+            projectId: "supermeow-dc20c",
+            storageBucket: "supermeow-dc20c.appspot.com",
+            messagingSenderId: "689979976743"
+        };
+        firebase.initializeApp(config);
+	</script>
+        <script src="cordova.js"></script>
+		<script type="text/javascript" src="js/phaser.js"></script>
+        <script type="text/javascript" src="js/phaser-virtual-joystick.min.js"></script>
+		<script type="text/javascript" src="js/states/Boot.js"></script>
+		<script type="text/javascript" src="js/states/Preload.js"></script>
+        <script type="text/javascript" src="js/states/HomeState.js">
+        </script>
+		<script type="text/javascript" src="js/states/Game.js"></script>
+		<script type="text/javascript" src="js/prefabs/Enemy.js"></script>
+        <script type="text/javascript" src="js/prefabs/Coin.js"></script>
+		<script src="js/scaler.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
