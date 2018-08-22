@@ -4,45 +4,44 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-        <link rel="stylesheet" type="text/css" href="css/style.css">
 		<title>Super Meow: Team C</title>
-         <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+
+		<style>
+		  body {
+		  	background-color: black;
+		    padding: 0px;
+		    margin: 0px;
+		  }
+		  </style>
 	</head>
 
-	<body background="assets/images/background.png" >
-		<div class="setting">
+	<body>
+	<!-- adding Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+	<script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDiZjDbVuGQSRW1uzCmTAbqfH-CfLGuitI",
+            authDomain: "supermeow-dc20c.firebaseapp.com",
+            databaseURL: "https://supermeow-dc20c.firebaseio.com",
+            projectId: "supermeow-dc20c",
+            storageBucket: "supermeow-dc20c.appspot.com",
+            messagingSenderId: "689979976743"
+        };
+        firebase.initializeApp(config);
+	</script>
+        <script src="cordova.js"></script>
+		<script type="text/javascript" src="js/phaser.js"></script>
+        <script type="text/javascript" src="js/phaser-virtual-joystick.min.js"></script>
+		<script type="text/javascript" src="js/states/Boot.js"></script>
+		<script type="text/javascript" src="js/states/Preload.js"></script>
+        <script type="text/javascript" src="js/states/HomeState.js">
+        </script>
+		<script type="text/javascript" src="js/states/Game.js"></script>
+		<script type="text/javascript" src="js/prefabs/Enemy.js"></script>
+        <script type="text/javascript" src="js/prefabs/Coin.js"></script>
+		<script src="js/scaler.js"></script>
+		<script src="js/main.js"></script>
 
-
-
-		</div>
-<div align="center">
-
-
-<br><br><br>
-		<img src="assets/images/logo0.png" alt="logo" width="100" >
-    <button class="play" onclick="location.href='play.html'" >Play </button>
-	  <button class="login" align="center"onclick="location.href='login.html'">Log In</button>
-    <button class="signup" align="center"onclick="location.href='signup.html'">Sign Up</button>
-	<button class="logoutbtn logoutbtn-hide" align="center" id="btnLogout">Log Out</button>
-
-	<script src="app.js"></script>
-	
-<!-- <div class="setting">
-<img border="0" alt="setting" src="assets/images/setting.png" width="40" height="40" align="left" onclick="location.href='tutor.html'"/>
-</div> -->
-
-	</div>
-		<!-- <img border="0" alt="setting" src="assets/images/setting.png" width="50" height="50" align="left" onclick="location.href='tutor.html'"/>
-<img src="assets/images/mouse1.png" alt="mouse" width="50"align="left" > -->
-<!-- setting logo to go to Tutorial Page -->
-<a href="tutor.html">
-		<img border="0" alt="setting" src="assets/images/setting.png" width="55" height="55" align="left">
-		<img src="assets/images/mouse1.png" alt="mouse" width="50"align="left" >
-		</a>
-
-<!-- <button class="button start" onclick="document.getElementById('id03').style.display='block'" style="width:auto;"><a href="index.html">Play</a></button> -->
 	</body>
 </html>
-
-
-
