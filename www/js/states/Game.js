@@ -233,7 +233,7 @@ Meow.GameState = {
       //stop the background
       this.backgroundSound.stop();
     //play the game over sound
-    this.gameoverSound.play();
+    this.gameoverSound.play("",0,1,false,false);
     this.updateHighscore();
     localStorage.setItem('currentCoin', 0);
     //game over messages
