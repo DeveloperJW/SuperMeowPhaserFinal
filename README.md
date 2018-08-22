@@ -12,8 +12,10 @@ Tools used for this project:<br>
 Game Levels:<br>
   1.Level 1: GrassLand<br>
   ![](www/img/lv1.png)
+  <br>
   2.Level 2: DesertLand<br>
   ![](www/img/lv2.png)
+  <br>
   3.Level 3: Ghost Town<br>
   ![](www/img/lv3.png)
 
