@@ -6,7 +6,9 @@ Team Number: Team C (super meow)<br></p>
 Tools used for this project:<br>
 ![](www/img/Tools_used.png)
 
-  
+This project is built for the purpose of mobile use, but you may try the game at the github pages link:
+https://developerjw.github.io/SuperMeowPhaserFinal/www/
+
 
 
 Game Levels:<br>
